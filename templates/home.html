@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="//templates/home.css"> -->
+    <title>Meeting Emails</title>
+</head>
+<body>
+    <!-- <button onclick="location.href = '{% url 'script' %}'">Execute</button>
+        {% if data %}
+        {{data}}
+
+        {% endif %} -->
+
+        <form action="/external/" method="post">
+            {% csrf_token %}
+            <label style="font-size: 25px; color: rgb(68, 39, 39);font-weight: bold;" for="date"> Select Past Dates to View</label>
+            <select style="margin-left: 20px; height: 30px;width: 200px;" id = "dates" name="dateDropdown">
+                <option value="0">Today</option>
+                <option value="2">Past 2 Days</option>
+                <option value="5">Past 5 days</option>
+                <option value="10">Past 10 Days</option>
+            </select>
+            <br>
+            <h1 >OR</h1>
+            <input  type="text" name="param" id = "searchInput" ><br>
+            <br>
+            <input class="label" id = "totatData" type="submit" value="Execute">
+        
+        </form>
+        
+        <table style="width:100%">
+          
+            {% for email in listEmails %}
+            <tr>
+              <th>{{email.id}}</th>
+              <th>{{email.messege}}</th>
+              <th><a target="_blank" href={{email.link}}>{{email.link}}</a></th>
+            </tr>
+            {% endfor %}
+        </table>
+
+</body>
+</html>

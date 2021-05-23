@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from . import views
+from django.views.static import serve
+from django.conf.urls import url
 # All th paths are Added here how it has to be rendered:
 
 urlpatterns = [
@@ -26,5 +28,7 @@ urlpatterns = [
     path('output', views.output , name="script"),
 
     path('external/', views.external, name="script"),
+    url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
 ]
  

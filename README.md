@@ -6,5 +6,5 @@
 ### Selecting on basis of Text
 ![3](https://user-images.githubusercontent.com/74761614/122683536-6f697980-d21d-11eb-8392-a804275f0193.png)
 
-# Heroku Link
-[Go to Web Site](https://get-class-link.herokuapp.com/)
+# Link
+### [Go to Web Site](https://get-class-link.herokuapp.com/)
